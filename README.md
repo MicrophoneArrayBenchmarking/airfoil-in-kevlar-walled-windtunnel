@@ -6,17 +6,17 @@ The document `NACA63018_acoustic.pdf` describes the setup and geometry. The data
 # Bechmark case
 The tasks are:
 
-1. Given the time-domain data file: `DTU_PLCT_NACA63018_trip_5PS_5SS_U0_50_AoA_0_TimeSeries.h5` and associated sample rate: Compute the Cross-spectral matrix (CSM) using Welch's method with `n=4096`, 50% overlap, and a Hanning window. Store real and imaginary parts of the CSM for frequency bins 500Hz and 1000Hz in CSV files named  `data/task1_[institution]_[software]_CSM_[real/imag]_f_[500/1000].csv`.  
+1. Given the time-domain data file: `DTU_PLCT_NACA63018_trip_5PS_5SS_U0_50_AoA_0_TimeSeries.h5` and associated sample rate: Compute the Cross-spectral matrix (CSM) using Welch's method [Welch1967] with `n=4096`, 50% overlap, and a Hanning window. Store real and imaginary parts of the CSM for frequency bins 500Hz and 1000Hz in CSV files named  `data/task1_[institution]_[software]_CSM_[real/imag]_f_[500/1000].csv`.  
 **Compare deviations in each case.**
 2. Given the microphone array geometry found in the time-domain data file: 
 `DTU_PLCT_NACA63018_trip_5PS_5SS_U0_50_AoA_0_TimeSeries.h5`. Compute the Point-spread function (PSF) from a reference point `(x_0,y_0) = (0.0,0.0)` in the domain $x=[-1;1]$ m and $y = [-1;1]$ m using 41 points in each dimension for the plane at $z_0 = 2.3$ m. Use the steering vector formulation III as defined in [Sarradj2012] and store the PSF for frequencies 500Hz, 1000Hz, 2000Hz, and 4000Hz in CSV file names:
 `data/task2_[institution]_[software]_PSF_f_[500/1000/2000/4000].csv`.  
 **Compare PSF plots for each frequency**.
 3. Given the cross-spectral matrix data file: 
-`DTU_PLCT_NACA63018_trip_5PS_5SS_U0_50_AoA_0_octave-12_CsmEss.h5`, associated microphone array geometry, and source distance $z_0 = 2.3$. Apply diagonal removal, and compute the conventional beamforming acoustic image in the domain $x=[-2;2]$ m and $y = [-1;1]$ m (using 81 points in the x-dimension and 41 in the y-dimension) in the frequency range $(fmin,fmax) = (400,4000)$. Store the acoustic images in dB for frequencies 500Hz, 1000Hz, 2000Hz, and 4000Hz in CSV file names:
+`DTU_PLCT_NACA63018_trip_5PS_5SS_U0_50_AoA_0_octave-12_CsmEss.h5`, associated microphone array geometry, and source distance $z_0 = 2.3$. Apply diagonal removal, and compute the conventional beamforming acoustic image in the domain $x=[-2;2]$ m and $y = [-1;1]$ m (using 81 points in the x-dimension and 41 in the y-dimension) in the frequency range $(fmin,fmax) = (400,4000)$. Use the steering vector formulation III as defined in [Sarradj2012] and store the acoustic images in dB for frequencies 500Hz, 1000Hz, 2000Hz, and 4000Hz in CSV file names:
 `data/task3_[institution]_[software]_CBF_f_[500/1000/2000/4000].csv`.  
 **Compare acoustic maps for each frequency**.
-4. Using the above setup, compute acoustic maps with Clean-SC [Sijtsma2007] using a loop-gain of 0.5, and maximum iterations of 100. Store the acoustic images in dB for frequencies 500Hz, 1000Hz, 2000Hz, and 4000Hz in CSV file names:
+4. Using the above setup, compute acoustic maps with Clean-SC [Sijtsma2007] using a loop-gain of 0.5, and maximum iterations of 100. Use the steering vector formulation III as defined in [Sarradj2012] and store the acoustic images in dB for frequencies 500Hz, 1000Hz, 2000Hz, and 4000Hz in CSV file names:
 `data/task4_[institution]_[software]_CleanSC_f_[500/1000/2000/4000].csv`.  
 **Compare acoustic maps for each frequency**.
 5. Compute Task 3 (CBF) again, but with a shear-layer correction, given the position of the Kevlar wall 1.5m from the trailing edge and 0.8m from the microphone array, and the flow-speed given in the dataset. Store the acoustic images in dB for frequencies 500Hz, 1000Hz, 2000Hz, and 4000Hz in CSV file names:
@@ -47,6 +47,8 @@ Lylloff, Oliver Ackermann; Bak, Christian; Fischer, Andreas; Olsen, Anders Smær
 ```
 
 # References
+[Welch1967]: Welch, P. (1967). The use of fast Fourier transform for the estimation of power spectra: A method based on time averaging over short, modified periodograms. IEEE Transactions on Audio and Electroacoustics, 15(2), 70–73. https://doi.org/10.1109/TAU.1967.1161901
+
 [Sarradj2012]: Sarradj, E. (2012). Three-dimensional acoustic source mapping with different beamforming steering vector formulations. Advances in Acoustics and Vibration, 2012(4), 1–12. https://doi.org/10.1155/2012/292695
 
 [Sijtsma2007]: Sijtsma, P. (2007). CLEAN based on spatial source coherence. International Journal of Aeroacoustics, 6(4), 357–374.
