@@ -19,13 +19,13 @@ The tasks are:
 4. Using the above setup, compute acoustic maps with Clean-SC [Sijtsma2007] using a loop-gain of 0.5, and maximum iterations of 100. Use the steering vector formulation III as defined in [Sarradj2012] and store the acoustic images in dB for frequencies 500Hz, 1000Hz, 2000Hz, and 4000Hz in CSV file names:
 `data/task4_[institution]_[software]_CleanSC_f_[500/1000/2000/4000].csv`.  
 **Compare acoustic maps for each frequency**.
-5. Compute Task 3 (CBF) again, but with a shear-layer correction, given the position of the Kevlar wall 1.5m from the trailing edge and 0.8m from the microphone array, and the flow-speed given in the dataset. Store the acoustic images in dB for frequencies 500Hz, 1000Hz, 2000Hz, and 4000Hz in CSV file names:
+5. Compute Task 3 (CBF) again, but with a shear-layer correction, given the position of the Kevlar wall 1.5m from the trailing edge and 0.8m from the microphone array, and the flow-speed given in the dataset. Assume a plane and thin shear-layer if using [Amiet1978]. Store the acoustic images in dB for frequencies 500Hz, 1000Hz, 2000Hz, and 4000Hz in CSV file names:
 `data/task5_[institution]_[software]_CBF_f_[500/1000/2000/4000].csv`.   
 **Compare acoustic maps for each frequency**.
 6. Using the acoustic maps from Task 5, compute source integration for the region $(xmin,xmax,ymin,ymax) = (-0.5,0.5,-0.4,0.4)$ in the frequency range $(fmin,fmax) = (400,4000)$. Store the result as two columns, first column `fc` and second column dB in CSV file name:
 `data/task6_[institution]_[software]_CBF_srcint.csv`.   
 **Compare source integration results**.
-7. Compute Task 4 (Clean-SC) again, but with a shear-layer correction, given the position of the Kevlar wall 1.5m from the trailing edge and 0.8m from the microphone array, and the flow-speed given in the dataset. Store the acoustic images in dB for frequencies 500Hz, 1000Hz, 2000Hz, and 4000Hz in CSV file names:
+7. Compute Task 4 (Clean-SC) again, but with a shear-layer correction, given the position of the Kevlar wall 1.5m from the trailing edge and 0.8m from the microphone array, and the flow-speed given in the dataset. Assume a plane and thin shear-layer if using [Amiet1978]. Store the acoustic images in dB for frequencies 500Hz, 1000Hz, 2000Hz, and 4000Hz in CSV file names:
 `data/task7_[institution]_[software]_CleanSC_f_[500/1000/2000/4000].csv`.   
 **Compare acoustic maps for each frequency**.
 8. Using the acoustic maps from Task 7, compute source integration for the region $(xmin,xmax,ymin,ymax) = (-0.5,0.5,-0.4,0.4)$. Store the result in dB in CSV file names:
@@ -48,6 +48,8 @@ Lylloff, Oliver Ackermann; Bak, Christian; Fischer, Andreas; Olsen, Anders Smær
 
 # References
 [Welch1967]: Welch, P. (1967). The use of fast Fourier transform for the estimation of power spectra: A method based on time averaging over short, modified periodograms. IEEE Transactions on Audio and Electroacoustics, 15(2), 70–73. https://doi.org/10.1109/TAU.1967.1161901
+
+[Amiet1978]: Amiet, R. K. (1978). Refraction of sound by a shear layer. Journal of Sound and Vibration, 58(4), 467–482. https://doi.org/10.1016/0022-460X(78)90353-X
 
 [Sarradj2012]: Sarradj, E. (2012). Three-dimensional acoustic source mapping with different beamforming steering vector formulations. Advances in Acoustics and Vibration, 2012(4), 1–12. https://doi.org/10.1155/2012/292695
 
