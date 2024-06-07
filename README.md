@@ -1,5 +1,5 @@
 # Airfoil in kevlar-walled windtunnel
-This benchmark case consist of measurements of a NACA63018 airfoil in a Kevlar-walled windtunnel and the associated tasks are described in the paper (State of Open-source Software for Microphone Array Processing).
+This benchmark case consist of measurements of a NACA63018 airfoil in a Kevlar-walled windtunnel.
 
 The document `NACA63018_acoustic.pdf` describes the setup and geometry. The dataset can be downloaded from: [data.dtu.dk](https://doi.org/10.11583/DTU.c.7222614).
 
@@ -39,12 +39,13 @@ Any institution/person using open source software can submit a solution to this 
 This benchmark can be cited by 
 
 ```   
-Lylloff, O., & Herold, G., & Kujawski, A., & Sarradj, E. (2024). State of open source software for microphone array processing. 10 Th Berlin Beamforming Conference 2024 (BeBeC), Berlin, Germany, 10/06/2024.
+Lylloff, O., & Herold, G., & Kujawski, A., & Sarradj, E. (2024). State of open source software for microphone array processing. 10 Th Berlin Beamforming Conference 2024 (BeBeC), Berlin, Germany, 10/06/2024.   
 ```
+
 and the data by:
 ```   
 Lylloff, Oliver Ackermann; Bak, Christian; Fischer, Andreas; Olsen, Anders Smærup; Ildvedsen, Sigurd Lundsgaard; Beckerlee, Jimmie Stig; et al. (2024). PLCT-data: NACA63018 aeroacoustic - microphone array. Technical University of Denmark. Collection. https://doi.org/10.11583/DTU.c.7222614
-```
+```  
 
 # References
 [Welch1967]: Welch, P. (1967). The use of fast Fourier transform for the estimation of power spectra: A method based on time averaging over short, modified periodograms. IEEE Transactions on Audio and Electroacoustics, 15(2), 70–73. https://doi.org/10.1109/TAU.1967.1161901
